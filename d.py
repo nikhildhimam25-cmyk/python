@@ -36,10 +36,10 @@ if 5<b<60:
       print(1200)
       if c1==1 and m=="no":
        print(1000)
-    if c1==3 and m=="yes":
-     print(700)
-     if c1==1 and m=="no":
-       print(1700)
+       if c1==3 and m=="yes":
+        print(700)
+        if c1==1 and m=="no":
+         print(1700)
 if b>60:
    print("discount of 20% ")
    if c1==1 and m=="yes":
