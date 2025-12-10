@@ -10,8 +10,8 @@ def input_something(p):
        return op
     print("this cant be blank")
 def main():
- with open ('p.txt','a') as c:
-  a='rock','paper','scissor'
+#  with open ('p.txt','a') as c:
+ a='rock','paper','scissor'
  j=(random.choice(a))
  op=input_something('enter your choice..')
  if op==j:
