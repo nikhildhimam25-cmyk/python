@@ -1,3 +1,4 @@
+
 print("------------WELCOMEE TO YOUR MOVIES DATABASE SYSTEM--------------")
 print("CHOOSE ANY OPTION")
 def f(a):
@@ -12,7 +13,7 @@ def input_something(p):
 
 def input_int(o):
   while True:
-   try:
+   try: 
     ok=int(input(o))
     if ok>=1 or ok!=int:
          return ok
