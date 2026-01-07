@@ -8,18 +8,21 @@ import matplotlib.pyplot as plt
 
 
 st.set_page_config(page_title="HOME",page_icon="🌾")
-st.title('MADYA PRADESH 2026 CROPS ARRIVAL PRICES ')
-col1,col2,col3=st.columns(3)
-with col1:
- st.image("images.jfif")
- st.image("download (1).jfif")
- with col2:
-  st.image("download (2).jfif")
-  st.image("images (2).jfif")
-  with col3:
-   st.image("images (3).jfif")
-   st.image("images (4).jfif")
-st.write("𝗖𝗥𝗢𝗣𝗦")
+st.title('MADYA PRADESH 2026 CROPS ARRIVAL')
+import streamlit.components.v1 as components
+
+video_url = "https://www.pexels.com/download/video/2530656/"
+
+components.html(
+    f"""
+    <video autoplay muted loop playsinline width="100%">
+        <source src="{video_url}" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    """,
+    height=400,
+)
+st.subheader("𝗖𝗥𝗢𝗣𝗦")
 st.write("Crop prices play an important role in the lives of farmers and consumers. They depend on factors such as weather conditions, availability of water, cost of seeds and fertilizers, and market demand. When production is high, prices usually fall, while low production can lead to higher prices. Fair and stable crop prices help farmers earn a good income and ensure that food remains affordable for everyone.")
 st.write("𝗛𝗢𝗪 𝗙𝗔𝗥𝗠𝗘𝗥𝗦 𝗛𝗘𝗟𝗣 𝗦𝗢𝗖𝗜𝗘𝗧𝗬")
 im1,im2=st.columns(2)
@@ -51,6 +54,22 @@ with t2:
  st.write("Chickpea (Gram), Lentil (Masoor), Pigeon Pea (Arhar/Tur), Moong")
  st.write("Soybean, Groundnut, Mustard, Sunflower")
  st.write("Cotton, Jute")
+st.write("𝗥𝗘𝗟𝗔𝗧𝗜𝗢𝗡 𝗕𝗘𝗧𝗪𝗘𝗘𝗡 𝗙𝗔𝗥𝗠𝗘𝗥𝗦 𝗔𝗡𝗗 𝗖𝗥𝗢𝗣𝗦")
+col2,col3=st.columns(2)
+with col2:
+  st.write("Understanding the relationship between farmers and crops is essential because it forms the foundation of sustainable agriculture. Farmers’ decisions—such as what to plant, when to irrigate, and how to protect crops from pests—directly impact crop yield, quality, and environmental health. Likewise, knowledge of crop needs helps farmers optimize resources, reduce losses, and ensure food security. Studying this relationship enables better farming practices, supports rural livelihoods, and promotes a balance between productivity and ecological sustainability.")
+  with col3:
+      video_url = "https://www.pexels.com/download/video/32539231/"
+
+      components.html(
+      f"""
+      <video autoplay muted loop playsinline width="100%">
+        <source src="{video_url}" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+      """,
+    height=400,
+             )
 
 # with open('download.jfif','rb') as f:
 #     file=f.read()
