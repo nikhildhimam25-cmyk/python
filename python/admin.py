@@ -37,15 +37,16 @@ def list(movie):
        if movie: 
         print(i,k)
 def view():
+    for i,k in enumerate(movie,start=1):
+      pass
     if not movie:
       print("No Movies Saved")
     else:
       se=input_int("enter movie index...")-1
-      for i,k in enumerate(movie,start=1):
-       if se>len(movie):
+    if se>len(movie):
          print("invalid index range")
         #  if se<=len(movie):
-       else:
+    else:
           d=movie[se]
           print(d)
 

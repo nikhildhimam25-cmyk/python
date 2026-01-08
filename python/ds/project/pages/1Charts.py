@@ -30,7 +30,7 @@ st.plotly_chart(char)
 char1=px.bar_polar(df,r="Arrival on 01 Jan, 2026",theta="Commodity Group",color="Commodity Group",title="𝗤𝗨𝗔𝗡𝗧𝗜𝗧𝗬 𝗔𝗥𝗥𝗜𝗩𝗘𝗗 𝗢𝗡 𝗡𝗘𝗪 𝗬𝗘𝗔𝗥 𝗔𝗖𝗖𝗢𝗥𝗗𝗜𝗡𝗚 𝗧𝗢 𝗖𝗢𝗠𝗠𝗢𝗗𝗜𝗧𝗬 𝗚𝗥𝗢𝗨𝗣")
 st.plotly_chart(char1)
 
-char3=px.scatter(df,x="Commodity",y="Arrival on 01 Jan, 2026",title="𝗤𝗨𝗔𝗡𝗧𝗜𝗧𝗬 𝗔𝗥𝗥𝗜𝗩𝗘𝗗 𝗢𝗡 𝗡𝗘𝗪 𝗬𝗘𝗔𝗥",color="Commodity")
+char3=px.scatter(df,x="Commodity",y="Arrival on 01 Jan, 2026",title="𝗣𝗘𝗥 𝗜𝗧𝗘𝗠 𝗤𝗨𝗔𝗡𝗧𝗜𝗧𝗬 𝗔𝗥𝗥𝗜𝗩𝗘𝗗 𝗢𝗡 𝗡𝗘𝗪 𝗬𝗘𝗔𝗥",color="Commodity")
 st.plotly_chart(char3)
 
 char2=px.scatter_3d(df,x="Arrival on 03 Jan, 2026",y="Arrival on 02 Jan, 2026",z="Arrival on 01 Jan, 2026",color="Commodity",title="𝗗𝗜𝗙𝗙𝗘𝗥𝗘𝗡𝗖𝗘 𝗢𝗙 𝗤𝗨𝗔𝗡𝗧𝗜𝗧𝗬 𝗢𝗡 𝗝𝗔𝗡 𝟭, 𝗝𝗔𝗡 𝟮 𝗔𝗡𝗗 𝗝𝗔𝗡 𝟯 𝗜𝗡 𝗧𝗢𝗡")
