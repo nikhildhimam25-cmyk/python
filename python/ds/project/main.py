@@ -27,7 +27,7 @@ st.write("Crop prices play an important role in the lives of farmers and consume
 st.write("𝗛𝗢𝗪 𝗙𝗔𝗥𝗠𝗘𝗥𝗦 𝗛𝗘𝗟𝗣 𝗦𝗢𝗖𝗜𝗘𝗧𝗬")
 im1,im2=st.columns(2)
 with im1:
- st.image("img5.jfif") 
+ st.image("img5.jpg") 
 with im2:
  st.image("img8.jpg") 
 st.write("Farmers are fundamental to the survival and progress of society. Through their constant labor, they provide the food that sustains populations and supports economic stability. Their contribution extends beyond agriculture, strengthening communities and ensuring food security for present and future generations.")
