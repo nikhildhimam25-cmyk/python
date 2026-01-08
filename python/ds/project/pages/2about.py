@@ -23,8 +23,30 @@ components.html(
     """,
     height=500,
 )
-# with st.form(key='key'):
-#     col1,col2=st.columns(2)
-#     with col1:
-#      name=st.text_input("Name",placeholder="Enter your name")
-#      num=st.number_input("number",placeholder="contact number")
+
+st.title("📩 Inquiry Form")
+st.write("Please fill out the form below and submit your inquiry.")
+
+with st.form("inquiry_form", clear_on_submit=True):
+    name = st.text_input("Full Name")
+    email = st.text_input("Email Address")
+    subject = st.selectbox(
+        "Subject",
+        ["General Inquiry", "Support", "Feedback", "Other"]
+    )
+    message = st.text_area("Your Message")
+
+    submitted = st.form_submit_button("Submit Inquiry")
+
+if submitted:
+    if name and email and message:
+        st.success("✅ Your inquiry has been submitted successfully!")
+        
+        # Optional: display submitted data
+        st.write("### Submitted Details")
+        st.write("**Name:**", name)
+        st.write("**Email:**", email)
+        st.write("**Subject:**", subject)
+        st.write("**Message:**", message)
+    else:
+        st.error("❌ Please fill in all required fields.")
