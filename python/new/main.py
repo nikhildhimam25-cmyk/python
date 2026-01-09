@@ -36,6 +36,7 @@ st.plotly_chart(char)
 
 ch=px.bar(df_sel[:20], x='Item Name', y='Votes', color='City')
 st.plotly_chart(ch)
+
 # val=df[df["Best Seller"].isin(['BESTSELLER',"CHEF'S SPECIAL","MUST TRY"])].head(50)
 # st.write(val)
 # fig, ax = plt.subplots()
