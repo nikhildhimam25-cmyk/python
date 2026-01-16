@@ -1,7 +1,6 @@
 import streamlit as st
-# ---------- App Title ----------
 if "quiz" not in st.session_state:
-    st.session_state.quiz = []
+  st.session_state.quiz = []
 if "ans" not in st.session_state:
     st.session_state.ans = []
 st.set_page_config(page_title="Quiz App", page_icon="🧠")
@@ -10,23 +9,23 @@ with st.sidebar:
     select=st.radio(label="menu",options=["ADD QUESTIONS","LIST","UPDATE","DELETE","PLAY"])
 if select=="ADD QUESTIONS":
  st.session_state.quizz=[]
- q=st.text_input("enter question..")
- q1=st.text_input('1..enter option..')
- q2=st.text_input('2..enter option..')
- q3=st.text_input('3..enter option..')
- q4=st.text_input('4..enter option..') 
- q5=st.selectbox(placeholder="select correct option",options=[q1,q2,q3,q4],label="CORRECT OPTION")
+ q=st.text_input("enter question..").strip()
+ q1=st.text_input('1..enter option..').strip()
+ q2=st.text_input('2..enter option..').strip()
+ q3=st.text_input('3..enter option..').strip()
+ q4=st.text_input('4..enter option..').strip()
+ q5=st.selectbox(options=[q1,q2,q3,q4],label="CORRECT OPTION",placeholder="select correct option")
  if st.button(label="ADD",key="add"):
   if q and q1 and q2 and q3 and q4:
-   st.session_state.quizz.append(q)
-   st.session_state.quizz.append(q1)
-   st.session_state.quizz.append(q2)
-   st.session_state.quizz.append(q3)
-   st.session_state.quizz.append(q4)
-   st.session_state.quiz.append(st.session_state.quizz)
-   st.session_state.ans.append(q5)
-   st.success("QUESTION ADDED SUCESSFULLY")
-if select=="LIST":
+    st.session_state.quizz.append(q)
+    st.session_state.quizz.append(q1)
+    st.session_state.quizz.append(q2)
+    st.session_state.quizz.append(q3)
+    st.session_state.quizz.append(q4)
+    st.session_state.quiz.append(st.session_state.quizz)
+    st.session_state.ans.append(q5)
+    st.success("QUESTION ADDED SUCESSFULLY")
+if  select=="LIST":
  if not st.session_state.quiz:
    st.write("NO QUESTIONS SAVED YET")
  else:
@@ -74,19 +73,16 @@ if select=="PLAY":
     for i,j in enumerate(st.session_state.quiz):
      pass
      st.write(st.session_state.quiz[i][0])
-     a=st.radio(label="select option",options=st.session_state.quiz[i][1:5])
+     a=st.radio(label="",options=st.session_state.quiz[i][1:5])
     if st.button(label="SUBMIT",key="play"):
        for i,j in enumerate(st.session_state.ans):
         pass
         if a in st.session_state.ans:
-         st.success("Your Score is ")
-    else:
-       if a not in st.session_state.ans:
-        st.success("wrong")
-
-
-
-
+         st.success("CONGRATULATIONS")
+         st.write("YOUR SCORE IS",st.session_state.ans.count(a))
+        else:
+          st.write("YOUR SCORE IS",st.session_state.ans.count(a))
+          
 
 
 
