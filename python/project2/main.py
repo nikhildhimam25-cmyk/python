@@ -16,7 +16,7 @@ if select=="ADD QUESTIONS":
  q3=st.text_input('3..enter option..')
  q4=st.text_input('4..enter option..') 
  q5=st.selectbox(placeholder="select correct option",options=[q1,q2,q3,q4],label="CORRECT OPTION")
- if st.button(label="ADD"):
+ if st.button(label="ADD",key="add"):
   if q and q1 and q2 and q3 and q4:
    st.session_state.quizz.append(q)
    st.session_state.quizz.append(q1)
@@ -31,19 +31,58 @@ if select=="LIST":
    st.write("NO QUESTIONS SAVED YET")
  else:
    for i,j in enumerate(st.session_state.quiz[0:len(st.session_state.quiz)]):
-    st.write(j)
+    st.write("Q..",i+1,j[0],"?")
+    st.write("1.",j[1])
+    st.write("2.",j[2])
+    st.write("3.",j[3])
+    st.write("4.",j[4])
 if select=="UPDATE":
   st.subheader("UPDATE QUIZ")
   if not  st.session_state.quiz:
     st.write("NO QUESTIONS YET")
   else:
+    opt=["QUESTION","OPTION 1","OPTION 2","OPTION 3","OPTION 4"]
     a=st.number_input(min_value=1,max_value=len(st.session_state.quiz),label="enter question number")
-    option=st.selectbox(label="select what to change",options=st.session_state.quiz[a][0:4])
+    option=st.selectbox(label="select what to change",options=opt)
     a3=st.text_input("enter new option/question ")
-    st.session_state.quiz[a].pop(option)
-    st.session_state.quiz[a].insert(option,a3)
-    st.write("CHANGE DONE")
-
+    if st.button("UPDATE",key="update"):
+      if option==opt[0]:
+       st.session_state.quiz[a-1][0]=a3
+      if option==opt[1]:
+       st.session_state.quiz[a-1][1]=a3
+      if option==opt[2]:
+       st.session_state.quiz[a-1][2]=a3
+      if option==opt[3]:
+       st.session_state.quiz[a-1][3]=a3
+      if option==opt[4]:
+       st.session_state.quiz[a-1][4]=a3
+      st.success("UPDATED SUCESSFULLY")
+if select=="DELETE":
+  st.subheader("DELETE QUIZ")
+  if not  st.session_state.quiz:
+    st.write("NO QUESTIONS YET")
+  else:
+   a=st.number_input(min_value=1,max_value=len(st.session_state.quiz),label="enter question number")
+   if st.button(label="DELETE OUESTION",key="DELETE"):
+     st.session_state.quiz.pop(a-1)
+     st.success("QUESTION DELETED SUCESSFULLY")
+if select=="PLAY":
+  st.subheader("PLAY QUIZ")
+  if not  st.session_state.quiz:
+    st.write("ADD SOME QUESTIONS TO PLAY ")
+  else:
+    for i,j in enumerate(st.session_state.quiz):
+     pass
+     st.write(st.session_state.quiz[i][0])
+     a=st.radio(label="select option",options=st.session_state.quiz[i][1:5])
+    if st.button(label="SUBMIT",key="play"):
+       for i,j in enumerate(st.session_state.ans):
+        pass
+        if a in st.session_state.ans:
+         st.success("Your Score is ")
+    else:
+       if a not in st.session_state.ans:
+        st.success("wrong")
 
 
 
@@ -134,7 +173,7 @@ if select=="UPDATE":
 #                 else:
 #                     st.error("❌ Wrong Answer")
 
-
+  
 # # ---------- LIST QUESTIONS ----------
 # elif menu == "List Questions":
 #     st.subheader(" All Questions")
