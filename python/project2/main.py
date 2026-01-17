@@ -3,6 +3,9 @@ if "quiz" not in st.session_state:
   st.session_state.quiz = []
 if "ans" not in st.session_state:
     st.session_state.ans = []
+if "check" not in st.session_state:
+    st.session_state.check = []
+  
 st.set_page_config(page_title="Quiz App", page_icon="🧠")
 st.title("WELCOME TO QUIZ APP ")
 with st.sidebar:
@@ -71,17 +74,31 @@ if select=="PLAY":
     st.write("ADD SOME QUESTIONS TO PLAY ")
   else:
     for i,j in enumerate(st.session_state.quiz):
-     pass
-     st.write(st.session_state.quiz[i][0])
-     a=st.radio(label="",options=st.session_state.quiz[i][1:5])
+      pass
+      st.write(st.session_state.quiz[i][0])
+      a=st.radio(label="",options=st.session_state.quiz[i][1:5],key=j )
+      st.session_state.check.append(a)
     if st.button(label="SUBMIT",key="play"):
-       for i,j in enumerate(st.session_state.ans):
-        pass
-        if a in st.session_state.ans:
-         st.success("CONGRATULATIONS")
-         st.write("YOUR SCORE IS",st.session_state.ans.count(a))
-        else:
-          st.write("YOUR SCORE IS",st.session_state.ans.count(a))
+     for n,j in enumerate(st.session_state.check):
+      pass
+     for y,j in enumerate(st.session_state.check):
+      pass
+      score = 0
+      for i in range(len(st.session_state.check)):
+         if st.session_state.check[n] == st.session_state.ans[y]:
+          score += 1
+          st.success("QUIZ COMPLETED")
+          st.write("YOUR SCORE IS:", score)
+         else:
+          score = 0
+          for i in range(len(st.session_state.check)):
+           if st.session_state.check[i] == st.session_state.ans[y]:
+            score += 1
+          st.success("QUIZ COMPLETED")
+          st.write("YOUR SCORE IS:", score)
+
+        # else:
+        #   st.write("YOUR SCORE IS",st.session_state.ans.count(a))
           
 
 
