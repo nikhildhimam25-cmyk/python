@@ -68,6 +68,9 @@ if select=="DELETE":
    if st.button(label="DELETE OUESTION",key="DELETE"):
      st.session_state.quiz.pop(a-1)
      st.success("QUESTION DELETED SUCESSFULLY")
+
+
+
 if select=="PLAY":
   st.subheader("PLAY QUIZ")
   if not  st.session_state.quiz:
@@ -75,30 +78,30 @@ if select=="PLAY":
   else:
     for i,j in enumerate(st.session_state.quiz):
       pass
+      st.session_state.checkk=[]
       st.write(st.session_state.quiz[i][0])
-      a=st.radio(label="",options=st.session_state.quiz[i][1:5],key=j )
-      st.session_state.check.append(a)
+      a=st.radio(label="",options=st.session_state.quiz[i][1:5], key=j )
+      st.session_state.checkk.append(a)
+      st.session_state.check.append(st.session_state.checkk)
     if st.button(label="SUBMIT",key="play"):
-     for n,j in enumerate(st.session_state.check):
+     for n,p in enumerate(st.session_state.check):
       pass
-     for y,j in enumerate(st.session_state.check):
+     for y,j in enumerate(st.session_state.ans):
       pass
       score = 0
-      for i in range(len(st.session_state.check)):
-         if st.session_state.check[n] == st.session_state.ans[y]:
-          score += 1
-          st.success("QUIZ COMPLETED")
-          st.write("YOUR SCORE IS:", score)
-         else:
-          score = 0
-          for i in range(len(st.session_state.check)):
-           if st.session_state.check[i] == st.session_state.ans[y]:
-            score += 1
-          st.success("QUIZ COMPLETED")
-          st.write("YOUR SCORE IS:", score)
+      if st.session_state.check[n] in st.session_state.ans[y]:
+           score+= 1
+           st.success("QUIZ COMPLETED")
+           st.write("YOUR SCORE IS:", score)
+         #  else:
+        #   score = 0
+        #   for i in range(len(st.session_state.check)):
+        #    if st.session_state.check[i] in  st.session_state.ans[y]:
+        #     score += 1
+        #   st.success("QUIZ COMPLETED")
+        #   st.write("YOUR SCORE IS:", score)
 
-        # else:
-        #   st.write("YOUR SCORE IS",st.session_state.ans.count(a))
+
           
 
 

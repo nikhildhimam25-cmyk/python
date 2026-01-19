@@ -33,8 +33,15 @@
 #     # print(i,'helo')
 #     print(j)
 
-l1=[['kritish','harshit','prince','ronit','krish'],[123,431,2,21,21,43216,614,44,446,74,4723,23,25,45]]
-print(l1[0][0:2])
-l1[0].pop(1)
-l1[0].insert(1,'rana')
-print(l1)
+l1=[['kritish','harshit','prince','ronit','krish'],[123,431,2,21,21,43216,614,44,446,74,4723,23,25,45],["hello"],["killer"]]
+l2=['','kritish','harshit','prince','ronit','krishh']
+# print(l1[0][0:2])
+# l1[0].pop(1)
+# l1[0].insert(1,'rana')
+# print(l1)
+for n in l1:
+    pass
+for m,k in enumerate(l2):
+    pass
+# if l2[m] in l1[n] :
+#     print("ok")
