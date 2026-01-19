@@ -94,12 +94,12 @@ if select=="PLAY":
            st.success("QUIZ COMPLETED")
            st.write("YOUR SCORE IS:", score)
          #  else:
-        #   score = 0
+        #   score = 0  
         #   for i in range(len(st.session_state.check)):
         #    if st.session_state.check[i] in  st.session_state.ans[y]:
         #     score += 1
         #   st.success("QUIZ COMPLETED")
-        #   st.write("YOUR SCORE IS:", score)
+        #   st.write("YOUR SCORE IS:", score) 
 
 
           
