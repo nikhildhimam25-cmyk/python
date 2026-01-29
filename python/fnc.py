@@ -74,15 +74,15 @@
 #     print(a,b,m)
 
 # keyfnc(a=34,b=45,m=23)
-# arbitrary arguements
-# def args(*y):
-#     for i,n in enumerate(y,start=1):
-#      print(i,":",n)
-# args(23)
-# args(23,76)
-# args(23,76,98)
-# args(23,76,98,87)
-# args(23,76,98,87,34)
+#                                     arbitrary arguements
+def args(*y):
+    for i,n in enumerate(y,start=1):
+     print(i,":",n)
+args(23)
+args(23,76)
+args(23,76,98)
+args(23,76,98,87)
+args(23,76,98,87,34)
 
 
 
@@ -191,8 +191,8 @@
 
 
 
-# a=lambda a=int(input("enter nu..")):'even'if a%2==0 else "odd",
-# print(a())
+a=lambda a=int(input("enter nu..")):'even'if a%2==0 else "odd",
+print(a())
 
 
 # a=lambda a=int(input("enter nu..")):a+10
@@ -206,8 +206,8 @@
 # print(a())
 
 
-# a=lambda a=int(input("enter a number..")),b=int(input("enter a number..")):a+'a is gretaor' if a>b else 'b is greator'
-# print(a())
+a=lambda a=int(input("enter a number..")),b=int(input("enter a number..")):a+'a is gretaor' if a>b else 'b is greator'
+print(a())
  
 
 # a=[1,2,3,4,5,6,7,8,9,10]
@@ -221,11 +221,17 @@
 # def addnum(a,b):
 #   return a+b
 # addnum(23,45)
-def oddeven():
- a=int(input("enter a num.."))
- if a%2==0:
-  print("even")
- else:
-  # a%2!=0
-  print("odd")
-oddeven()
+# def oddeven():
+#  a=int(input("enter a num.."))
+#  if a%2==0:
+#   print("even")
+#  else:
+#   # a%2!=0
+#   print("odd")
+# oddeven()
+
+
+   
+
+
+
